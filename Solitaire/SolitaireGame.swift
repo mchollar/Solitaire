@@ -36,11 +36,11 @@ class SolitaireGame {
         }
         
         mutating func accept(card: SolitaireCard) {
-            if self.canAccept(card: card) {
-                self.stack.append(card)
-//                lastMoveWasSuccess = true
-//            } else {
-//                lastMoveWasSuccess = false
+            if canAccept(card: card) {
+                stack.append(card)
+                print("Tableau accept success")
+            } else {
+                print("Tableau accept fail")
             }
         }
         
@@ -205,7 +205,7 @@ class SolitaireGame {
         }
         
         //Determine if it's one card, or multiple being moved
-        let numberOfCards = tableaus[tableauIndex].stack.count - cardIndex - 1
+        let numberOfCards = tableaus[tableauIndex].stack.count - cardIndex
         
         if numberOfCards > 1 {  //Multiple cards to be moved
             let cardsPulled = tableaus[tableauIndex].pull(cardsAtIndex: cardIndex)
@@ -217,7 +217,7 @@ class SolitaireGame {
         }
         
         if let cardPulled = tableaus[tableauIndex].stack.popLast() { //Single card, just move it to destination
-            tableaus[tableauIndex].accept(card: cardPulled)
+            tableaus[destinationIndex].accept(card: cardPulled)
             lastMoveWasSuccess = true
             print("Card: \(cardPulled.contents) placed on tableau: \(destinationIndex)")
         }

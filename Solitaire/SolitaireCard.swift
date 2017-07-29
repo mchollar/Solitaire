@@ -27,9 +27,11 @@ class SolitaireCard: PlayingCard {
         if self.color != nil, card.color != nil, self.rank != nil, card.rank != nil {
             
             if (self.color != card.color) && (card.rank! - self.rank! == 1) {
+                print("\(card.contents) canBeMarriedTo \(self.contents)")
                 return true
             }
         }
+        print("\(card.contents) can NOT BeMarriedTo \(self.contents)")
         return false
     }
     
