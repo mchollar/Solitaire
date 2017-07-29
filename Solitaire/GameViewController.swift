@@ -22,6 +22,8 @@ class GameViewController: UIViewController {
     
     var game: SolitaireGame?
     
+    let CARDWIDTH = CGFloat(50)
+    let CARDHEIGHT = CGFloat(70)
     //need card size stuff, offset stuff (hor/vert)
     
     
@@ -31,7 +33,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         game = SolitaireGame(cardsPerDraw: 1)
         for index in 0 ..< 7 {
-            //tableauViews[index].tag = index
+            tableauViews[index].tag = index
             tableauViews[index].stackType = .tableau
         }
         for index in 0 ..< 4 {
@@ -95,8 +97,8 @@ class GameViewController: UIViewController {
         
         cardView.frame = CGRect(x: 0,
                                 y: 0,
-                                width: 60,
-                                height: 80)
+                                width: CARDWIDTH,
+                                height: CARDHEIGHT)
         return cardView
         
     }
@@ -406,7 +408,7 @@ class GameViewController: UIViewController {
                         },
                                        completion: { (finished) in
                                         self.animateFlipOf(cardView: drawnCardView)
-                                        drawnCardView.frame = CGRect(x: CGFloat(index * 10), y: 0.0, width: 60, height: 80)
+                                        drawnCardView.frame = CGRect(x: CGFloat(index * 10), y: 0.0, width: self.CARDWIDTH, height: self.CARDHEIGHT)
                                         print("Drawn card animation complete: \(drawnCardView)")
                         })
                     }

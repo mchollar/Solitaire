@@ -216,7 +216,7 @@ class SolitaireGame {
             }
         }
         
-        if let cardPulled = tableaus[tableauIndex].stack.popLast() { //Single card, just move it to destination
+        else if let cardPulled = tableaus[tableauIndex].stack.popLast() { //Single card, just move it to destination
             tableaus[destinationIndex].accept(card: cardPulled)
             lastMoveWasSuccess = true
             print("Card: \(cardPulled.contents) placed on tableau: \(destinationIndex)")
