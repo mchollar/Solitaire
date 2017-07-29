@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		228B79DE1F257F9100B763AD /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B79DD1F257F9100B763AD /* CardStackView.swift */; };
+		22D231A11F241E9E001F531A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231A01F241E9E001F531A /* AppDelegate.swift */; };
+		22D231A31F241E9E001F531A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231A21F241E9E001F531A /* GameViewController.swift */; };
+		22D231A51F241E9E001F531A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231A41F241E9E001F531A /* SecondViewController.swift */; };
+		22D231A81F241E9E001F531A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D231A61F241E9E001F531A /* Main.storyboard */; };
+		22D231AA1F241E9E001F531A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D231A91F241E9E001F531A /* Assets.xcassets */; };
+		22D231AD1F241E9E001F531A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D231AB1F241E9E001F531A /* LaunchScreen.storyboard */; };
+		22D231B81F241E9E001F531A /* SolitaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231B71F241E9E001F531A /* SolitaireTests.swift */; };
+		22D231C71F241F23001F531A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231C21F241F23001F531A /* Card.swift */; };
+		22D231C81F241F23001F531A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231C31F241F23001F531A /* Deck.swift */; };
+		22D231C91F241F23001F531A /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231C41F241F23001F531A /* PlayingCard.swift */; };
+		22D231CA1F241F23001F531A /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231C51F241F23001F531A /* PlayingCardDeck.swift */; };
+		22D231CB1F241F23001F531A /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231C61F241F23001F531A /* PlayingCardView.swift */; };
+		22D231CE1F241FAF001F531A /* SolitaireGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231CD1F241FAF001F531A /* SolitaireGame.swift */; };
+		22D231D01F242A29001F531A /* SolitaireCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231CF1F242A29001F531A /* SolitaireCard.swift */; };
+		22D231D21F242B08001F531A /* SolitaireCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D231D11F242B08001F531A /* SolitaireCardDeck.swift */; };
+		22F96A0D1F28203A00547576 /* SolitaireCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F96A0C1F28203A00547576 /* SolitaireCardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22D231B41F241E9E001F531A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22D231951F241E9E001F531A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22D2319C1F241E9E001F531A;
+			remoteInfo = Solitaire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		228B79DD1F257F9100B763AD /* CardStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		22D2319D1F241E9E001F531A /* Solitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D231A01F241E9E001F531A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22D231A21F241E9E001F531A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		22D231A41F241E9E001F531A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		22D231A71F241E9E001F531A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22D231A91F241E9E001F531A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22D231AC1F241E9E001F531A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22D231AE1F241E9E001F531A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D231B31F241E9E001F531A /* SolitaireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolitaireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D231B71F241E9E001F531A /* SolitaireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireTests.swift; sourceTree = "<group>"; };
+		22D231B91F241E9E001F531A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D231C21F241F23001F531A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		22D231C31F241F23001F531A /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		22D231C41F241F23001F531A /* PlayingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		22D231C51F241F23001F531A /* PlayingCardDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		22D231C61F241F23001F531A /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
+		22D231CD1F241FAF001F531A /* SolitaireGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolitaireGame.swift; sourceTree = "<group>"; };
+		22D231CF1F242A29001F531A /* SolitaireCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolitaireCard.swift; sourceTree = "<group>"; };
+		22D231D11F242B08001F531A /* SolitaireCardDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolitaireCardDeck.swift; sourceTree = "<group>"; };
+		22F96A0C1F28203A00547576 /* SolitaireCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolitaireCardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22D2319A1F241E9E001F531A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D231B01F241E9E001F531A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22D231941F241E9E001F531A = {
+			isa = PBXGroup;
+			children = (
+				22D2319F1F241E9E001F531A /* Solitaire */,
+				22D231B61F241E9E001F531A /* SolitaireTests */,
+				22D2319E1F241E9E001F531A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22D2319E1F241E9E001F531A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22D2319D1F241E9E001F531A /* Solitaire.app */,
+				22D231B31F241E9E001F531A /* SolitaireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22D2319F1F241E9E001F531A /* Solitaire */ = {
+			isa = PBXGroup;
+			children = (
+				22D231A01F241E9E001F531A /* AppDelegate.swift */,
+				22D231A21F241E9E001F531A /* GameViewController.swift */,
+				22D231CD1F241FAF001F531A /* SolitaireGame.swift */,
+				22D231A61F241E9E001F531A /* Main.storyboard */,
+				228B79DD1F257F9100B763AD /* CardStackView.swift */,
+				22D231A41F241E9E001F531A /* SecondViewController.swift */,
+				22D231A91F241E9E001F531A /* Assets.xcassets */,
+				22D231CC1F241F32001F531A /* Model */,
+				22D231AB1F241E9E001F531A /* LaunchScreen.storyboard */,
+				22D231AE1F241E9E001F531A /* Info.plist */,
+			);
+			path = Solitaire;
+			sourceTree = "<group>";
+		};
+		22D231B61F241E9E001F531A /* SolitaireTests */ = {
+			isa = PBXGroup;
+			children = (
+				22D231B71F241E9E001F531A /* SolitaireTests.swift */,
+				22D231B91F241E9E001F531A /* Info.plist */,
+			);
+			path = SolitaireTests;
+			sourceTree = "<group>";
+		};
+		22D231CC1F241F32001F531A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22D231C21F241F23001F531A /* Card.swift */,
+				22D231C31F241F23001F531A /* Deck.swift */,
+				22D231C41F241F23001F531A /* PlayingCard.swift */,
+				22D231CF1F242A29001F531A /* SolitaireCard.swift */,
+				22D231C51F241F23001F531A /* PlayingCardDeck.swift */,
+				22D231D11F242B08001F531A /* SolitaireCardDeck.swift */,
+				22D231C61F241F23001F531A /* PlayingCardView.swift */,
+				22F96A0C1F28203A00547576 /* SolitaireCardView.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22D2319C1F241E9E001F531A /* Solitaire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22D231BC1F241E9E001F531A /* Build configuration list for PBXNativeTarget "Solitaire" */;
+			buildPhases = (
+				22D231991F241E9E001F531A /* Sources */,
+				22D2319A1F241E9E001F531A /* Frameworks */,
+				22D2319B1F241E9E001F531A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Solitaire;
+			productName = Solitaire;
+			productReference = 22D2319D1F241E9E001F531A /* Solitaire.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22D231B21F241E9E001F531A /* SolitaireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22D231BF1F241E9E001F531A /* Build configuration list for PBXNativeTarget "SolitaireTests" */;
+			buildPhases = (
+				22D231AF1F241E9E001F531A /* Sources */,
+				22D231B01F241E9E001F531A /* Frameworks */,
+				22D231B11F241E9E001F531A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22D231B51F241E9E001F531A /* PBXTargetDependency */,
+			);
+			name = SolitaireTests;
+			productName = SolitaireTests;
+			productReference = 22D231B31F241E9E001F531A /* SolitaireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22D231951F241E9E001F531A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Micah Chollar";
+				TargetAttributes = {
+					22D2319C1F241E9E001F531A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4C592246MX;
+						ProvisioningStyle = Automatic;
+					};
+					22D231B21F241E9E001F531A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4C592246MX;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 22D2319C1F241E9E001F531A;
+					};
+				};
+			};
+			buildConfigurationList = 22D231981F241E9E001F531A /* Build configuration list for PBXProject "Solitaire" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22D231941F241E9E001F531A;
+			productRefGroup = 22D2319E1F241E9E001F531A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22D2319C1F241E9E001F531A /* Solitaire */,
+				22D231B21F241E9E001F531A /* SolitaireTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22D2319B1F241E9E001F531A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D231AD1F241E9E001F531A /* LaunchScreen.storyboard in Resources */,
+				22D231AA1F241E9E001F531A /* Assets.xcassets in Resources */,
+				22D231A81F241E9E001F531A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D231B11F241E9E001F531A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22D231991F241E9E001F531A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D231A51F241E9E001F531A /* SecondViewController.swift in Sources */,
+				228B79DE1F257F9100B763AD /* CardStackView.swift in Sources */,
+				22D231CB1F241F23001F531A /* PlayingCardView.swift in Sources */,
+				22D231A11F241E9E001F531A /* AppDelegate.swift in Sources */,
+				22D231D21F242B08001F531A /* SolitaireCardDeck.swift in Sources */,
+				22D231C81F241F23001F531A /* Deck.swift in Sources */,
+				22D231D01F242A29001F531A /* SolitaireCard.swift in Sources */,
+				22D231A31F241E9E001F531A /* GameViewController.swift in Sources */,
+				22D231CE1F241FAF001F531A /* SolitaireGame.swift in Sources */,
+				22D231C91F241F23001F531A /* PlayingCard.swift in Sources */,
+				22F96A0D1F28203A00547576 /* SolitaireCardView.swift in Sources */,
+				22D231C71F241F23001F531A /* Card.swift in Sources */,
+				22D231CA1F241F23001F531A /* PlayingCardDeck.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D231AF1F241E9E001F531A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D231B81F241E9E001F531A /* SolitaireTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22D231B51F241E9E001F531A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22D2319C1F241E9E001F531A /* Solitaire */;
+			targetProxy = 22D231B41F241E9E001F531A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22D231A61F241E9E001F531A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22D231A71F241E9E001F531A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22D231AB1F241E9E001F531A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22D231AC1F241E9E001F531A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22D231BA1F241E9E001F531A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22D231BB1F241E9E001F531A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22D231BD1F241E9E001F531A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4C592246MX;
+				INFOPLIST_FILE = Solitaire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MRCTools.Solitaire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		22D231BE1F241E9E001F531A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4C592246MX;
+				INFOPLIST_FILE = Solitaire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MRCTools.Solitaire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		22D231C01F241E9E001F531A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4C592246MX;
+				INFOPLIST_FILE = SolitaireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MRCTools.SolitaireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solitaire.app/Solitaire";
+			};
+			name = Debug;
+		};
+		22D231C11F241E9E001F531A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4C592246MX;
+				INFOPLIST_FILE = SolitaireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MRCTools.SolitaireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solitaire.app/Solitaire";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22D231981F241E9E001F531A /* Build configuration list for PBXProject "Solitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22D231BA1F241E9E001F531A /* Debug */,
+				22D231BB1F241E9E001F531A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22D231BC1F241E9E001F531A /* Build configuration list for PBXNativeTarget "Solitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22D231BD1F241E9E001F531A /* Debug */,
+				22D231BE1F241E9E001F531A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22D231BF1F241E9E001F531A /* Build configuration list for PBXNativeTarget "SolitaireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22D231C01F241E9E001F531A /* Debug */,
+				22D231C11F241E9E001F531A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22D231951F241E9E001F531A /* Project object */;
+}
