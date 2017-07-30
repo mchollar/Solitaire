@@ -22,16 +22,21 @@ class GameViewController: UIViewController {
     
     var game: SolitaireGame?
     
-    let CARDWIDTH = CGFloat(50)
-    let CARDHEIGHT = CGFloat(70)
+    var CARD_WIDTH = CGFloat(50)
+    var CARD_HEIGHT = CGFloat(70)
+    var FAN_HOR_OFFSET = CGFloat(15)
+    var FAN_VERT_OFFSET = CGFloat(20)
+    let STACK_VERT_OFFSET = CGFloat(2)
+    let STACK_HOR_OFFSET = CGFloat(0.15)
     //need card size stuff, offset stuff (hor/vert)
+    var cardsPerDraw = 3
     
     
     //MARK: LIFECYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = SolitaireGame(cardsPerDraw: 1)
+        game = SolitaireGame(cardsPerDraw: cardsPerDraw)
         for index in 0 ..< 7 {
             tableauViews[index].tag = index
             tableauViews[index].stackType = .tableau
@@ -42,6 +47,17 @@ class GameViewController: UIViewController {
         }
         wasteView.stackType = .waste
         stockView.stackType = .stock
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        CARD_WIDTH = tableauViews[0].frame.size.width - 3
+        CARD_HEIGHT = CARD_WIDTH * 1.4
+        FAN_HOR_OFFSET = CARD_WIDTH * 0.2
+        FAN_VERT_OFFSET = CARD_WIDTH * 0.3
+        
         setupUI()
     }
     
@@ -60,7 +76,7 @@ class GameViewController: UIViewController {
                 newCardView.currentStack = stockView
                 newCardView.currentCardIndex = cardIndex
                 stockView.addSubview(newCardView)
-                newCardView.frame = newCardView.frame.offsetBy(dx: CGFloat(cardIndex!) * 0.15, dy: 0)
+                newCardView.frame = newCardView.frame.offsetBy(dx: CGFloat(cardIndex!) * STACK_HOR_OFFSET, dy: 0)
             }
             print("Stock complete")
             
@@ -76,7 +92,7 @@ class GameViewController: UIViewController {
                     newCardView.currentStack = tableauViews[tableauIndex]
                     newCardView.currentCardIndex = cardIndex
                     tableauViews[tableauIndex].addSubview(newCardView)
-                    newCardView.frame = newCardView.frame.offsetBy(dx: 0.0, dy: CGFloat(cardIndex!) * 2)
+                    newCardView.frame = newCardView.frame.offsetBy(dx: 0.0, dy: CGFloat(cardIndex!) * STACK_VERT_OFFSET)
                     addTapGestureTo(newCardView)
                     print("Tableau card: \(newCardView.description) added to Tableau: \(tableauIndex) at \(cardIndex ?? -1)")
                 }
@@ -87,6 +103,28 @@ class GameViewController: UIViewController {
         
     }
     
+    @IBAction func newGameButtonTouched(_ sender: UIButton) {
+        
+        for card in stockView.subviews {
+            card.removeFromSuperview()
+        }
+        for card in wasteView.subviews {
+            card.removeFromSuperview()
+        }
+        for tableau in tableauViews {
+            for card in tableau.subviews {
+                card.removeFromSuperview()
+            }
+        }
+        for foundation in tableauViews {
+            for card in foundation.subviews {
+                card.removeFromSuperview()
+            }
+        }
+        game = SolitaireGame(cardsPerDraw: cardsPerDraw)
+        setupUI()
+        
+    }
     //MARK: CREATE AND UPDATE VIEWS
     
     private func startNewViewWith(card: SolitaireCard, at index: Int) -> SolitaireCardView {
@@ -97,8 +135,8 @@ class GameViewController: UIViewController {
         
         cardView.frame = CGRect(x: 0,
                                 y: 0,
-                                width: CARDWIDTH,
-                                height: CARDHEIGHT)
+                                width: CARD_WIDTH,
+                                height: CARD_HEIGHT)
         return cardView
         
     }
@@ -177,7 +215,8 @@ class GameViewController: UIViewController {
                 //get view's top view to bring to front (to avoid weird overlapping
                 if let topView = getTopViewOf(pan.view!) {
                 //view.bringSubview(toFront: pan.view!.superview!)
-                    view.bringSubview(toFront: topView)
+                    view.bringSubview(toFront: topView.superview!)
+                    topView.superview!.bringSubview(toFront: topView)
                 }
             }
             let translation = pan.translation(in: view)
@@ -226,8 +265,9 @@ class GameViewController: UIViewController {
                                 cardView.removeFromSuperview()
                                 snap(card: cardView, to: destination)
                             } else {
-                                cardView.removeFromSuperview()
-                                snap(card: cardView, to: dragOrigin!)
+                                //cardView.removeFromSuperview()
+                                //snap(card: cardView, to: dragOrigin!)
+                                returnToOrigin(cardView)
                             }
                         } else if destination.stackType! == .foundation {
                             game!.playTableauToFoundation(tableauIndex: dragOrigin!.tag, destinationIndex: destination.tag)
@@ -235,8 +275,9 @@ class GameViewController: UIViewController {
                                 cardView.removeFromSuperview()
                                 stack(card: cardView, on: destination)
                             } else {
-                                cardView.removeFromSuperview()
-                                snap(card: cardView, to: dragOrigin!)
+                                //cardView.removeFromSuperview()
+                                //snap(card: cardView, to: dragOrigin!)
+                                returnToOrigin(cardView)
                             }
                         }
                         
@@ -318,7 +359,7 @@ class GameViewController: UIViewController {
             topCardView.addSubview(card)
             var newOrigin = CGPoint.zero
             if topCardView.isFaceUp {
-                newOrigin.y += 20
+                newOrigin.y += FAN_VERT_OFFSET
             }
             card.frame = CGRect(origin: newOrigin, size: card.frame.size)
         } else {
@@ -335,20 +376,35 @@ class GameViewController: UIViewController {
     
     private func returnToWaste(_ cardView: SolitaireCardView) {
         
-        let cardTarget = wasteView.subviews[wasteView.subviews.count-2]
+        var cardTarget = SolitaireCardView()
+        if wasteView.subviews.count > 1 {
+            cardTarget = wasteView.subviews[wasteView.subviews.count-2] as! SolitaireCardView
+        }
         var newOrigin = cardTarget.frame.origin
         if newOrigin.x > 0 {
-            newOrigin.x += 10
+            newOrigin.x += FAN_HOR_OFFSET
         }
         cardView.frame = CGRect(origin: newOrigin, size: cardView.frame.size)
     }
     
-    
-    private func getCardFor(cardview: SolitaireCardView, origin: UIView) -> SolitaireCard? {
-
+    private func returnToOrigin(_ cardView: SolitaireCardView) {
         
+        var cardTarget = SolitaireCardView()
+        if dragOrigin?.subviews.count ?? 0 > 1 {
+            cardTarget = dragOrigin?.subviews[cardView.currentCardIndex! - 1] as? SolitaireCardView ?? SolitaireCardView()
+        }
+        var newOrigin = cardTarget.frame.origin
+        if dragOrigin?.stackType == .tableau {
         
-        return nil
+            if newOrigin.y > 0, cardTarget.isFaceUp {
+                newOrigin.y += FAN_VERT_OFFSET
+            } else {
+                newOrigin.y = CGFloat(cardView.currentCardIndex ?? 0) * STACK_VERT_OFFSET
+            }
+        }
+        
+        cardView.frame = CGRect(origin: newOrigin, size: cardView.frame.size)
+        
     }
     
     //MARK: GAME INTERACTION
@@ -360,7 +416,6 @@ class GameViewController: UIViewController {
         }
         return nil
     }
-    
     
     @IBAction func drawFromStack(_ sender: UITapGestureRecognizer) {
         if let game = self.game {
@@ -401,14 +456,14 @@ class GameViewController: UIViewController {
                                        options: .beginFromCurrentState,
                                        animations: {
                                         print("Animating drawn card: \(drawnCardView)")
-                                        drawnCardView.frame = drawnCardView.frame.offsetBy(dx: self.wasteView.frame.origin.x - self.stockView.frame.origin.x + CGFloat(index * 10), dy: 0.0)
+                                        drawnCardView.frame = drawnCardView.frame.offsetBy(dx: self.wasteView.frame.origin.x - self.stockView.frame.origin.x + CGFloat(index) * self.FAN_HOR_OFFSET, dy: 0.0)
                                         //self.animateFlipOf(cardView: drawnCardView)
                                         
                                         
                         },
                                        completion: { (finished) in
                                         self.animateFlipOf(cardView: drawnCardView)
-                                        drawnCardView.frame = CGRect(x: CGFloat(index * 10), y: 0.0, width: self.CARDWIDTH, height: self.CARDHEIGHT)
+                                        drawnCardView.frame = CGRect(x: CGFloat(index) * self.FAN_HOR_OFFSET, y: 0.0, width: self.CARD_WIDTH, height: self.CARD_HEIGHT)
                                         print("Drawn card animation complete: \(drawnCardView)")
                         })
                     }
@@ -448,28 +503,11 @@ class GameViewController: UIViewController {
                     cardView.frame = cardView.frame.offsetBy(dx: 0.0, dy: -cardView.frame.origin.y)
                 }
             if let cardIndex = array.index(of: cardView) {
-                cardView.frame = cardView.frame.offsetBy(dx: CGFloat(cardIndex) * -0.15, dy: 0.0)
+                cardView.frame = cardView.frame.offsetBy(dx: CGFloat(cardIndex) * -STACK_HOR_OFFSET, dy: 0.0)
             
             }
         }
     }
     
-    
-    //Not sure I need these
-    private func fanCardViews(_ array: [SolitaireCardView]) {
-        
-    }
-    
-    private func move(cardView: SolitaireCardView, from orig: [SolitaireCardView], to dest: [SolitaireCardView]) {
-        //Remove card from orig viewArray, then add to dest viewArray
-        
-    }
-    
-    private func move(stackOfCardViews: [SolitaireCard], from orig: [SolitaireCardView], to dest: [SolitaireCardView]) {
-        
-    }
-
-    
-
 }
 

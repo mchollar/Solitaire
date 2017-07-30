@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCk-l5-rUH" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                <rect key="frame" x="32" y="40" width="60" height="80"/>
+                                <rect key="frame" x="36" y="40" width="56" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -31,75 +31,84 @@
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5x-sG-4xC" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                <rect key="frame" x="104" y="40" width="91" height="80"/>
+                                <rect key="frame" x="104" y="40" width="130" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rHa-pr-urG">
-                                <rect key="frame" x="91" y="145" width="240" height="80"/>
+                                <rect key="frame" x="95" y="145" width="271" height="149"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dR9-HH-bqe" userLabel="Foundation 0" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="58" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="149"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alm-nD-dS5" userLabel="Foundation 1" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="0.0" width="57.5" height="80"/>
+                                        <rect key="frame" x="69" y="0.0" width="65" height="149"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBO-S2-3Wb" userLabel="Foundation 2" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="121.5" y="0.0" width="58" height="80"/>
+                                        <rect key="frame" x="137" y="0.0" width="66" height="149"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXo-JI-kcz" userLabel="Foundation 3" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="182.5" y="0.0" width="57.5" height="80"/>
+                                        <rect key="frame" x="206" y="0.0" width="65" height="149"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tZZ-EM-bg7">
-                                <rect key="frame" x="1" y="251" width="373" height="359"/>
+                                <rect key="frame" x="5" y="320" width="404" height="322"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI3-cu-5pb" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="359"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oR-lM-Rxf" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="53.5" y="0.0" width="51.5" height="359"/>
+                                        <rect key="frame" x="58" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4p-Vr-OCG" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="107" y="0.0" width="51.5" height="359"/>
+                                        <rect key="frame" x="116" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncf-A4-CFL" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="160.5" y="0.0" width="52" height="359"/>
+                                        <rect key="frame" x="174" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-AQ-tUB" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="214.5" y="0.0" width="51.5" height="359"/>
+                                        <rect key="frame" x="232" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZM-Px-zm1" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="268" y="0.0" width="51.5" height="359"/>
+                                        <rect key="frame" x="290" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B8-B3-vam" customClass="CardStackView" customModule="Solitaire" customModuleProvider="target">
-                                        <rect key="frame" x="321.5" y="0.0" width="51.5" height="359"/>
+                                        <rect key="frame" x="348" y="0.0" width="56" height="322"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q25-eD-N4W">
+                                <rect key="frame" x="334" y="649" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGameButtonTouched:" destination="9pv-A4-QxB" eventType="touchUpInside" id="xOE-Vs-K1C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rHa-pr-urG" secondAttribute="bottom" constant="442" id="3Mw-JM-MYd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q25-eD-N4W" secondAttribute="trailing" constant="-15" id="411-rH-aF4"/>
                             <constraint firstItem="tZZ-EM-bg7" firstAttribute="top" secondItem="rHa-pr-urG" secondAttribute="bottom" constant="26" id="524-bX-g5v"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Q25-eD-N4W" secondAttribute="bottom" constant="8" id="AsM-ZT-8jT"/>
                             <constraint firstItem="C5x-sG-4xC" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="20" id="FLZ-hU-bpD"/>
                             <constraint firstItem="C5x-sG-4xC" firstAttribute="top" secondItem="bCk-l5-rUH" secondAttribute="top" id="I6j-4a-Ws0"/>
                             <constraint firstItem="C5x-sG-4xC" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="104" id="Iy2-c2-xPE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rHa-pr-urG" secondAttribute="trailing" constant="28" id="REe-rk-Vwu"/>
                             <constraint firstItem="rHa-pr-urG" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="145" id="a8O-aR-TCk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tZZ-EM-bg7" secondAttribute="trailing" constant="-15" id="foj-5w-anF"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="tZZ-EM-bg7" secondAttribute="bottom" constant="8" symbolic="YES" id="i9f-EZ-JLu"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="tZZ-EM-bg7" secondAttribute="bottom" constant="45" id="i9f-EZ-JLu"/>
                             <constraint firstItem="tZZ-EM-bg7" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="jgi-1R-q7V"/>
                             <constraint firstItem="rHa-pr-urG" firstAttribute="top" secondItem="C5x-sG-4xC" secondAttribute="bottom" constant="25" id="nuz-Qt-ZQv"/>
                             <constraint firstAttribute="trailing" secondItem="C5x-sG-4xC" secondAttribute="trailing" constant="180" id="pCx-Qi-cyu"/>
@@ -144,18 +153,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="83" y="313" width="209.5" height="41.5"/>
+                                <rect key="frame" x="102" y="347" width="210" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="362.5" width="215" height="17"/>
+                                <rect key="frame" x="99" y="397" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
