@@ -28,8 +28,8 @@ class GameViewController: UIViewController {
     var FAN_VERT_OFFSET = CGFloat(20)
     let STACK_VERT_OFFSET = CGFloat(2)
     let STACK_HOR_OFFSET = CGFloat(0.15)
-    //need card size stuff, offset stuff (hor/vert)
-    var cardsPerDraw = 3
+    
+    var cardsPerDraw = 1
     
     
     //MARK: LIFECYCLE
@@ -116,7 +116,7 @@ class GameViewController: UIViewController {
                 card.removeFromSuperview()
             }
         }
-        for foundation in tableauViews {
+        for foundation in foundationViews {
             for card in foundation.subviews {
                 card.removeFromSuperview()
             }
@@ -159,6 +159,18 @@ class GameViewController: UIViewController {
     }
     
     private func updateCardIndexes() {
+        for card in stockView.subviews {
+            if let solCard = card as? SolitaireCardView {
+                solCard.currentStack = stockView
+                solCard.currentCardIndex = stockView.subviews.index(of: solCard)
+            }
+        }
+        for card in wasteView.subviews {
+            if let solCard = card as? SolitaireCardView {
+                solCard.currentStack = wasteView
+                solCard.currentCardIndex = wasteView.subviews.index(of: solCard)
+            }
+        }
         for tableau in tableauViews {
             var cardIndex = 0
             var cardView = tableau.subviews.first as? SolitaireCardView
@@ -209,9 +221,10 @@ class GameViewController: UIViewController {
     
     //MARK: DRAG AND DROP BEHAVIOR
     func panHandler(reactingTo pan: UIPanGestureRecognizer) {
-        if pan.view != nil {
+        if let cardView = pan.view as? SolitaireCardView {
             if pan.state == .began {
-                dragOrigin = pan.view!.superview as? CardStackView //setting origin, for    use later
+                
+                dragOrigin = cardView.currentStack //setting origin, for    use later
                 //get view's top view to bring to front (to avoid weird overlapping
                 if let topView = getTopViewOf(pan.view!) {
                 //view.bringSubview(toFront: pan.view!.superview!)
@@ -224,7 +237,7 @@ class GameViewController: UIViewController {
             pan.view?.frame.origin.y += translation.y
             pan.setTranslation(CGPoint.zero, in: view)
             
-            if pan.state == .ended, game != nil, let cardView = pan.view as? SolitaireCardView {
+            if pan.state == .ended, game != nil {
                 
                 let destination = closestViewTo(cardView)
                 
@@ -265,8 +278,6 @@ class GameViewController: UIViewController {
                                 cardView.removeFromSuperview()
                                 snap(card: cardView, to: destination)
                             } else {
-                                //cardView.removeFromSuperview()
-                                //snap(card: cardView, to: dragOrigin!)
                                 returnToOrigin(cardView)
                             }
                         } else if destination.stackType! == .foundation {
@@ -275,8 +286,6 @@ class GameViewController: UIViewController {
                                 cardView.removeFromSuperview()
                                 stack(card: cardView, on: destination)
                             } else {
-                                //cardView.removeFromSuperview()
-                                //snap(card: cardView, to: dragOrigin!)
                                 returnToOrigin(cardView)
                             }
                         }
@@ -288,8 +297,9 @@ class GameViewController: UIViewController {
                                 cardView.removeFromSuperview()
                                 snap(card: cardView, to: destination)
                             } else {
-                                cardView.removeFromSuperview()
-                                stack(card: cardView, on: dragOrigin!)
+                                //cardView.removeFromSuperview()
+                                //stack(card: cardView, on: dragOrigin!)
+                                returnToOrigin(cardView)
                             }
                         }
                         
@@ -482,6 +492,7 @@ class GameViewController: UIViewController {
 
             }
         }
+        updateCardIndexes()
     }
 
     private func animateFlipOf(cardView: SolitaireCardView) {
